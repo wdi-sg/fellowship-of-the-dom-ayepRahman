@@ -20,6 +20,7 @@ var lands = ['The Shire', 'Rivendell', 'Mordor']
 var body = document.querySelector('body')
 var landArticle = document.createElement('Article')
 var landTitle = document.createElement('h1')
+var newLi = document.createElement("li")
 
 // Part 1
 // CALL THE FUNCTION!!!!!
@@ -55,30 +56,25 @@ function makeHobbits () {
   var firstArticle = document.querySelectorAll('article')[0]
   var shire = firstArticle.querySelector('h1')
   var newHobs = document.createElement('ul')
+  var newList = document.createElement("li")
+  newList.classList.add('hobbits')
 
   shire.appendChild(newHobs)
-
-  var hobbits = [
-    'Frodo Baggins',
-    'Samwise \'Sam\' Gamgee',
-    'Meriadoc \'Merry\' Brandybuck',
-    'Peregrin \'Pippin\' Took'
-  ]
-
+  newHobs.appendChild(newList)
 
 //<li class="hobbit">Frodo</li>
 for (var i = 0; i < hobbits.length; i++ ) {
-  var newLi = document.createElement("li")
-  newHobs.appendChild(newLi)
+
+  newHobs.appendChild(newList)
   var multiHobbit = hobbits[i]
-  var multiName = newLi.textContent(multiHobbit)
+  //var multiName = newLi.textContent(multiHobbit)
 
   var newClass = document.createAttribute("class")
   //multiName.textContent(newClass)
 }
 
 
-console.log(multiHobbit)
+console.log(newHobs)
 }
 
 makeHobbits()
